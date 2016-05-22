@@ -36,7 +36,9 @@ import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.base.MultitenantConstants;
 import org.wso2.carbon.core.util.KeyStoreManager;
 import org.wso2.carbon.identity.oauth.dao.OAuthAppDO;
+import org.wso2.carbon.identity.base.IdentityException;
 import org.wso2.carbon.identity.core.util.IdentityCoreConstants;
+import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
 import org.wso2.carbon.identity.core.util.IdentityUtil;
 import org.wso2.carbon.identity.oauth.common.exception.InvalidOAuthClientException;
 import org.wso2.carbon.identity.oauth.config.OAuthServerConfiguration;
@@ -446,6 +448,13 @@ public class JWTTokenGenerator implements AuthorizationContextTokenGenerator {
         Key privateKey = null;
 
         if (!(privateKeys.containsKey(tenantId))) {
+
+            try {
+                IdentityTenantUtil.initializeRegistry(tenantId, tenantDomain);
+            } catch (IdentityException e) {
+                throw new IdentityOAuth2Exception("Error occurred while loading registry for tenant " + tenantDomain, e);
+            }
+
             // get tenant's key store manager
             KeyStoreManager tenantKSM = KeyStoreManager.getInstance(tenantId);
 
@@ -485,6 +494,13 @@ public class JWTTokenGenerator implements AuthorizationContextTokenGenerator {
         Certificate publicCert = null;
 
         if (!(publicCerts.containsKey(tenantId))) {
+
+            try {
+                IdentityTenantUtil.initializeRegistry(tenantId, tenantDomain);
+            } catch (IdentityException e) {
+                throw new IdentityOAuth2Exception("Error occurred while loading registry for tenant " + tenantDomain, e);
+            }
+
             // get tenant's key store manager
             KeyStoreManager tenantKSM = KeyStoreManager.getInstance(tenantId);
 
