@@ -206,7 +206,7 @@ public class RegistrationRequestFactory extends HttpIdentityRequestFactory {
                                                                             HttpServletResponse response) {
         HttpIdentityResponse.HttpIdentityResponseBuilder builder =
                 new HttpIdentityResponse.HttpIdentityResponseBuilder();
-        String errorMessage = generateErrorResponse("ddd", exception.getMessage()).toJSONString();
+        String errorMessage = generateErrorResponse(exception.getCode(), exception.getMessage()).toJSONString();
         builder.setBody(errorMessage);
         builder.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
         builder.addHeader(OAuthConstants.HTTP_RESP_HEADER_CACHE_CONTROL,

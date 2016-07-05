@@ -82,8 +82,7 @@ public class DCRManagementService {
             log.debug("Trying to register OAuth application: '" + applicationName + "'");
         }
 
-        RegistrationResponseProfile info;
-        info = this.createOAuthApplication(profile);
+        RegistrationResponseProfile info = this.createOAuthApplication(profile);
 
         RegistrationResponseProfile registrationResponseProfile = new RegistrationResponseProfile();
 
