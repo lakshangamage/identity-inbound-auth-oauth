@@ -289,7 +289,9 @@ public class DCRManagementService {
         } catch (Exception e) {
             //We had to catch Exception here because getOAuthApplicationData can throw exceptions of java.lang.Exception
             // class.
-
+            if(log.isDebugEnabled()) {
+                log.debug("Error occurred while oauth application data by consumer id.", e);
+            }
         }
 
         if (oAuthConsumerApp != null) {

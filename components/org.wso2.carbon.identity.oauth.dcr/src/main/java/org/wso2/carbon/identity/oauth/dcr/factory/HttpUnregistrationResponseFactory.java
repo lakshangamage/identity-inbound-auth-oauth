@@ -27,7 +27,9 @@ import org.wso2.carbon.identity.oauth.dcr.model.UnregistrationResponse;
 
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ * Http UnRegistration Response Factory.
+ */
 public class HttpUnregistrationResponseFactory extends HttpIdentityResponseFactory {
 
     @Override

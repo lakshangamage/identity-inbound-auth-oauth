@@ -120,10 +120,26 @@
         <div id="workArea">
             <script type="text/javascript">
                 function itemRemove(consumerkey, appname) {
-                    CARBON.showConfirmationDialog("<fmt:message key='remove.message1'/>" + appname + "<fmt:message key='remove.message2'/>",
-                                                  function () {
-                                                      location.href = "remove-app.jsp?consumerkey=" + consumerkey;
-                                                  }, null);
+
+                    function doDelete() {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'remove-app-ajaxprocessor.jsp',
+                            headers: {
+                                Accept: "text/html"
+                            },
+                            data: 'consumerkey=' + consumerkey,
+                            async: false,
+                            success: function (responseText, status) {
+                                if (status == "success") {
+                                    location.assign("index.jsp");
+                                }
+                            }
+                        });
+                    }
+
+                    CARBON.showConfirmationDialog('<fmt:message key='remove.message1'/>' + appname + '<fmt:message key='remove.message2'/>',
+                            doDelete, null);
                 }
             </script>
 

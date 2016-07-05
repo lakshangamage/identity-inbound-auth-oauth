@@ -21,8 +21,8 @@ package org.wso2.carbon.identity.oauth.endpoint.util;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.wso2.carbon.claim.mgt.ClaimManagerHandler;
 import org.wso2.carbon.identity.base.IdentityConstants;
+import org.wso2.carbon.identity.claim.metadata.mgt.ClaimMetadataHandler;
 import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
 import org.wso2.carbon.identity.core.util.IdentityUtil;
 import org.wso2.carbon.identity.oauth.user.UserInfoEndpointException;
@@ -66,7 +66,7 @@ public class ClaimUtil {
             UserStoreManager userstore = realm.getUserStoreManager();
 
             // need to get all the requested claims
-            Map<String, String> requestedLocalClaimMap = ClaimManagerHandler.getInstance()
+            Map<String, String> requestedLocalClaimMap = ClaimMetadataHandler.getInstance()
                     .getMappingsMapFromOtherDialectToCarbon(SP_DIALECT, null, tenantDomain, true);
             if (MapUtils.isNotEmpty(requestedLocalClaimMap)) {
                 for (String s : requestedLocalClaimMap.keySet()) {
@@ -77,7 +77,7 @@ public class ClaimUtil {
                     log.debug("Requested number of local claims: " + claimURIList.size());
                 }
 
-                spToLocalClaimMappings = ClaimManagerHandler.getInstance().getMappingsMapFromOtherDialectToCarbon
+                spToLocalClaimMappings = ClaimMetadataHandler.getInstance().getMappingsMapFromOtherDialectToCarbon
                         (SP_DIALECT, null, tenantDomain, false);
 
                 Map<String, String> userClaims = userstore.getUserClaimValues(MultitenantUtils.getTenantAwareUsername

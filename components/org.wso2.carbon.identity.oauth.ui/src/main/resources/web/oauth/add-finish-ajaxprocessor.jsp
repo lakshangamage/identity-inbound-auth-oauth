@@ -38,6 +38,12 @@
 <jsp:include page="../dialog/display_messages.jsp" />
 
 <%
+    String httpMethod = request.getMethod();
+    if (!"post".equalsIgnoreCase(httpMethod)) {
+        response.sendError(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
+        return;
+    }
+
     String applicationName = request.getParameter("application");
     String callback = request.getParameter("callback");
     String oauthVersion = request.getParameter("oauthVersion");

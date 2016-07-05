@@ -35,6 +35,9 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+/**
+ * Http Registration Response Factory.
+ */
 public class HttpRegistrationResponseFactory extends HttpIdentityResponseFactory {
 
     public static String INVALID_REDIRECT_URI = "invalid_redirect_uri";

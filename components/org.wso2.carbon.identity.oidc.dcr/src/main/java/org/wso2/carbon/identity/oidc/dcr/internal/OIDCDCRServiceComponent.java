@@ -44,7 +44,6 @@ public class OIDCDCRServiceComponent {
     @SuppressWarnings("unused")
     protected void activate(ComponentContext componentContext) {
         try {
-            System.out.print("DDD");
 
             componentContext.getBundleContext().registerService(HttpIdentityRequestFactory.class.getName(),
                                                                 new OIDCRegistrationRequestFactory(), null);
@@ -52,10 +51,8 @@ public class OIDCDCRServiceComponent {
                                                                 new OIDCDCRProcessor(), null);
             componentContext.getBundleContext().registerService(HttpIdentityResponseFactory.class.getName(),
                                                                 new HttpOIDCRegistrationResponseFactory(), null);
-
-
-        } catch (Exception ee) {
-            ee.printStackTrace();
+        } catch (Throwable e) {
+            log.error("Error occurred while activating OIDCDCRServiceComponent", e);
         }
     }
 

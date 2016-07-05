@@ -54,8 +54,8 @@ public class DCRServiceComponent {
 
     @SuppressWarnings("unused")
     protected void activate(ComponentContext componentContext) {
-        try {
 
+        try {
 
             componentContext.getBundleContext().registerService(IdentityProcessor.class.getName(),
                                                                 new DCRProcessor(), null);
@@ -76,11 +76,8 @@ public class DCRServiceComponent {
 
             componentContext.getBundleContext().registerService(UnRegistrationHandler.class.getName(),
                                                                 new UnRegistrationHandler(), null);
-
-
-            System.out.print(">>>>>");
-        } catch (Exception ee) {
-            ee.printStackTrace();
+        } catch (Throwable e) {
+            log.error("Error occurred while activating DCRServiceComponent", e);
         }
     }
 

@@ -251,7 +251,7 @@
                 })
             </script>
 
-            <form method="post" name="editAppform"  action="edit-finish.jsp"  target="_self">
+            <form method="post" name="editAppform"  action="edit-finish-ajaxprocessor.jsp"  target="_self">
             	<input id="consumerkey" name="consumerkey" type="hidden" value="<%=Encode.forHtmlAttribute(app.getOauthConsumerKey())%>" />
 		        <input id="consumersecret" name="consumersecret" type="hidden" value="<%=Encode.forHtmlAttribute(app.getOauthConsumerSecret())%>" />
                 <table style="width: 100%" class="styledLeft">

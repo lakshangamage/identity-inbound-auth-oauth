@@ -34,6 +34,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 
+/**
+ * UnRegistration Request Factory.
+ */
 public class UnregistrationRequestFactory extends HttpIdentityRequestFactory {
 
     private static Log log = LogFactory.getLog(UnregistrationRequestFactory.class);

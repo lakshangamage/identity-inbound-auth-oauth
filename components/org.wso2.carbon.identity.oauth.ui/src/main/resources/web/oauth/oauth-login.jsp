@@ -138,7 +138,7 @@
                    
                     </table>
 
-                    <form method="post" name="oauthsign" action="oauth-login-finish.jsp">
+                    <form method="post" name="oauthsign" action="oauth-login-finish-ajaxprocessor.jsp">
                         <%
                             if (cssLocation != null) {
                         %>

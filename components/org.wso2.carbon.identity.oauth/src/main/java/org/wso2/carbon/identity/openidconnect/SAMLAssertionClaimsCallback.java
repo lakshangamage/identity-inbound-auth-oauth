@@ -31,7 +31,6 @@ import org.opensaml.saml2.core.AttributeStatement;
 import org.opensaml.xml.XMLObject;
 import org.w3c.dom.Element;
 import org.wso2.carbon.base.MultitenantConstants;
-import org.wso2.carbon.claim.mgt.ClaimManagerHandler;
 import org.wso2.carbon.identity.application.authentication.framework.model.AuthenticatedUser;
 import org.wso2.carbon.identity.application.common.IdentityApplicationManagementException;
 import org.wso2.carbon.identity.application.common.model.ClaimMapping;
@@ -39,6 +38,7 @@ import org.wso2.carbon.identity.application.common.model.ServiceProvider;
 import org.wso2.carbon.identity.application.mgt.ApplicationManagementService;
 import org.wso2.carbon.identity.base.IdentityConstants;
 import org.wso2.carbon.identity.base.IdentityException;
+import org.wso2.carbon.identity.claim.metadata.mgt.ClaimMetadataHandler;
 import org.wso2.carbon.identity.core.util.IdentityCoreConstants;
 import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
 import org.wso2.carbon.identity.core.util.IdentityUtil;
@@ -283,7 +283,7 @@ public class SAMLAssertionClaimsCallback implements CustomClaimsCallbackHandler 
             log.debug("Requested number of local claims: " + claimURIList.size());
         }
 
-        Map<String, String> spToLocalClaimMappings = ClaimManagerHandler.getInstance()
+        Map<String, String> spToLocalClaimMappings = ClaimMetadataHandler.getInstance()
                 .getMappingsMapFromOtherDialectToCarbon(SP_DIALECT, null, spTenantDomain, false);
         Map<String, String> userClaims = null;
         try {
@@ -372,7 +372,7 @@ public class SAMLAssertionClaimsCallback implements CustomClaimsCallbackHandler 
             log.debug("Requested number of local claims: " + claimURIList.size());
         }
 
-        Map<String, String> spToLocalClaimMappings = ClaimManagerHandler.getInstance().
+        Map<String, String> spToLocalClaimMappings = ClaimMetadataHandler.getInstance().
                 getMappingsMapFromOtherDialectToCarbon(SP_DIALECT, null, spTenantDomain, false);
 
         Map<String, String> userClaims = null;

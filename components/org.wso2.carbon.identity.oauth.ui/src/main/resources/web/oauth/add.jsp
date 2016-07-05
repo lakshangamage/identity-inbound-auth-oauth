@@ -151,7 +151,7 @@
 
             </script>
 
-            <form id="addAppForm" method="post" name="addAppform" action="add-finish.jsp"
+            <form id="addAppForm" method="post" name="addAppform" action="add-finish-ajaxprocessor.jsp"
                   target="_self">
                 <table style="width: 100%" class="styledLeft">
                     <thead>

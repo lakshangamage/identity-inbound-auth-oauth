@@ -138,6 +138,14 @@
             <groupId>org.wso2.carbon.identity</groupId>
             <artifactId>org.wso2.carbon.identity.user.store.configuration</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.identity</groupId>
+            <artifactId>org.wso2.carbon.identity.claim.metadata.mgt</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -207,7 +215,7 @@
                             <!--com.sun.jna.platform.win32;-->
                             <!--com.sun.jna.platform.win32; version="${waffle-jna.imp.pkg.version.range}",-->
 
-                            org.joda.time;version="${opensaml2.wso2.osgi.version.range}",
+                            org.joda.time;version="${joda.wso2.osgi.version.range}",
                             org.opensaml.*; version="${opensaml2.wso2.osgi.version.range}",
 
                             org.osgi.framework; version="${osgi.framework.imp.pkg.version.range}",
