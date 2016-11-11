@@ -33,6 +33,7 @@ import org.wso2.carbon.base.MultitenantConstants;
 import org.wso2.carbon.core.util.KeyStoreManager;
 import org.wso2.carbon.identity.base.IdentityException;
 import org.wso2.carbon.identity.core.handler.AbstractIdentityHandler;
+import org.wso2.carbon.identity.core.handler.AbstractIdentityMessageHandler;
 import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
 import org.wso2.carbon.identity.framework.authentication.context.AuthenticationContext;
 import org.wso2.carbon.identity.framework.authentication.processor.request.ClientAuthenticationRequest;
@@ -54,7 +55,7 @@ import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class IDTokenHandler extends AbstractIdentityHandler {
+public class IDTokenHandler extends AbstractIdentityMessageHandler {
 
     private static final String SHA512_WITH_RSA = "SHA512withRSA";
     private static Map<Integer, Key> privateKeys = new ConcurrentHashMap<Integer, Key>();

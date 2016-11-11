@@ -20,6 +20,7 @@ package org.wso2.carbon.identity.oidc.handler;
 
 import com.nimbusds.jwt.JWT;
 import org.wso2.carbon.identity.core.handler.HandlerComparator;
+import org.wso2.carbon.identity.core.handler.MessageHandlerComparator;
 import org.wso2.carbon.identity.framework.authentication.context.AuthenticationContext;
 import org.wso2.carbon.identity.oauth2poc.exception.OAuth2InternalException;
 import org.wso2.carbon.identity.oauth2poc.exception.OAuth2RuntimeException;
@@ -43,7 +44,7 @@ public class OIDCHandlerManager {
     public JWT buildIDToken(AuthenticationContext messageContext) throws OAuth2InternalException {
 
         List<IDTokenHandler> handlers = OIDCServiceComponentHolder.getInstance().getIDTokenHandlers();
-        Collections.sort(handlers, new HandlerComparator(messageContext));
+        Collections.sort(handlers, new MessageHandlerComparator(messageContext));
         for(IDTokenHandler handler:handlers){
             if(handler.canHandle(messageContext)){
                 return handler.buildIDToken(messageContext);

@@ -21,6 +21,7 @@ package org.wso2.carbon.identity.oauth2poc.handler.issuer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.identity.core.handler.AbstractIdentityHandler;
+import org.wso2.carbon.identity.core.handler.AbstractIdentityMessageHandler;
 import org.wso2.carbon.identity.framework.authentication.context.AuthenticationContext;
 import org.wso2.carbon.identity.framework.authentication.model.User;
 import org.wso2.carbon.identity.framework.authentication.processor.request.AuthenticationRequest;
@@ -36,7 +37,7 @@ import java.util.Set;
 /*
  * To generate OAuth2 access tokens
  */
-public abstract class AccessTokenResponseIssuer extends AbstractIdentityHandler {
+public abstract class AccessTokenResponseIssuer extends AbstractIdentityMessageHandler {
 
     private static Log log = LogFactory.getLog(AccessTokenResponseIssuer.class);
 

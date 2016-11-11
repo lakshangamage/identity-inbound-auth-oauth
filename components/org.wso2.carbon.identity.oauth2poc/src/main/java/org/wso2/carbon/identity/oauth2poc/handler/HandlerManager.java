@@ -19,6 +19,7 @@
 package org.wso2.carbon.identity.oauth2poc.handler;
 
 import org.wso2.carbon.identity.core.handler.HandlerComparator;
+import org.wso2.carbon.identity.core.handler.MessageHandlerComparator;
 import org.wso2.carbon.identity.framework.authentication.context.AuthenticationContext;
 import org.wso2.carbon.identity.oauth2poc.exception.OAuth2RuntimeException;
 import org.wso2.carbon.identity.oauth2poc.handler.issuer.AccessTokenResponseIssuer;
@@ -43,7 +44,7 @@ public class HandlerManager {
     public AccessToken issueAccessToken(AuthenticationContext messageContext) {
 
         List<AccessTokenResponseIssuer> handlers = OAuth2ServiceComponentHolder.getInstance().getAccessTokenIssuers();
-        Collections.sort(handlers, new HandlerComparator(messageContext));
+        Collections.sort(handlers, new MessageHandlerComparator(messageContext));
         for(AccessTokenResponseIssuer handler:handlers){
             if(handler.canHandle(messageContext)){
                 return handler.issue(messageContext);
