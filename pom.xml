@@ -25,9 +25,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.carbon.identity</groupId>
+    <groupId>org.wso2.carbon.identity.framework</groupId>
     <artifactId>identity-inbound-auth-oauth-poc</artifactId>
-    <version>5.5.0-SNAPSHOT</version>
+    <version>5.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WSO2 Carbon OAuth module</name>
     <description>
@@ -75,9 +75,9 @@
                 <version>${carbon.kernel.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.core</artifactId>
-                <version>${identity.framework.version}</version>
+                <version>${identity.framework.SNAPSHOT.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.wso2.orbit.org.apache.oltu.oauth2</groupId>
@@ -85,12 +85,12 @@
                 <version>${oltu.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.application.mgt</artifactId>
                 <version>${identity.framework.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.application.common</artifactId>
                 <version>${identity.framework.version}</version>
             </dependency>
@@ -100,19 +100,19 @@
                 <version>${servlet.api.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.framework</artifactId>
-                <version>${identity.framework.version}</version>
+                <version>${identity.framework.SNAPSHOT.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.framework.authentication</artifactId>
-                <version>${identity.framework.version}</version>
+                <version>${identity.framework.SNAPSHOT.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.oauth2poc</artifactId>
-                <version>${identity.framework.version}</version>
+                <version>${identity.framework.SNAPSHOT.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.wso2.orbit.com.nimbusds</groupId>
@@ -216,7 +216,8 @@
     <properties>
         <carbon.kernel.version>4.4.6</carbon.kernel.version>
         <commons-collections.version>3.2.0.wso2v1</commons-collections.version>
-        <identity.framework.version>5.5.0-SNAPSHOT</identity.framework.version>
+        <identity.framework.SNAPSHOT.version>5.6.0-SNAPSHOT</identity.framework.SNAPSHOT.version>
+        <identity.framework.version>5.6.14</identity.framework.version>
         <opensaml2.wso2.version>2.6.4.wso2v2</opensaml2.wso2.version>
         <encoder.wso2.version>1.2.0.wso2v1</encoder.wso2.version>
         <axis2.wso2.version>1.6.1.wso2v12</axis2.wso2.version>
